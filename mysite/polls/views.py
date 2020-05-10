@@ -44,4 +44,4 @@ def vote(request, question_id):
         return HttpResponseRedirect(reverse('polls:results', args=(question.id,)))
 
 def home_view(request):
-    return HttpResponse("<h1>Hello world")
+    return render(request, 'polls/home.html')
