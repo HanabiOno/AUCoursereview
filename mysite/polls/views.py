@@ -54,3 +54,6 @@ def SCI_view(request):
 
 def SSC_view(request):
     return render(request, 'polls/SSC.html')
+
+def ACC_view(request):
+    return render(request, 'polls/ACC.html')
