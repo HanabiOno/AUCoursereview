@@ -4,7 +4,7 @@ body {
 }
 
 h1 {
-  color: navy;
+  color: black;
   margin-left: 20px;
 }
 
@@ -14,17 +14,22 @@ h2 {
 }
 
 
-
+.title{
+    colour: black;
+    width:1000
 
 .container{
     width: 300px;
-    }
+}
 
-.container img{
+.majors{
+    colour: black
+    width: 1000px;
+
+.majors img{
 float: left;
 margin-left: 10px 10px 10px 30px;
-width: 100px;
-height: 300px;
+width: 400px;
 }
 
 /* Bottom right text */
