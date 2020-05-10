@@ -3,7 +3,7 @@ body {
 }
 
 h1 {
-  color: navy;
+  color: red;
   margin-left: 20px;
 }
 
@@ -11,3 +11,5 @@ h2 {
     colour: navy;
     margin-left: 20px;
 }
+
+
