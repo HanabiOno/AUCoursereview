@@ -45,3 +45,12 @@ def vote(request, question_id):
 
 def home_view(request):
     return render(request, 'polls/home.html')
+
+def HUM_view(request):
+    return render(request, 'polls/HUM.html')
+
+def SCI_view(request):
+    return render(request, 'polls/SCI.html')
+
+def SSC_view(request):
+    return render(request, 'polls/SSC.html')
