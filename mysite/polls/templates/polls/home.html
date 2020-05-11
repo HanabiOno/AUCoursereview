@@ -1,40 +1,55 @@
 <!DOCTYPE html>
-{% load static %}
+<html lang="en">
+<head>
+  <title>AUCourse review</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
 
-<html lang="eng">
-
-  <head>
-    <meta charset="UTF-8">
-    <title>AUCourse Reviews</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'polls/home.css' %}">
-  </head>
-  <body>
-    <div id="title">
-      <center><h1>AUCourse reviews</h1></center>
-    </div>
-    <div class="container">
-      <div class="majors">
-	<img src="https://images.freeimages.com/images/large-previews/c85/black-hole-1200379.jpg" alt="Science" style="width:100%;">
-	<div class="text-block">
-	  <h4>Sciences</h4>
-	  <a>Click for reviews</a>
-	</div>
-      </div>  
-      <div class="majors">
-	 <img src="https://images.freeimages.com/images/large-previews/c85/black-hole-1200379.jpg" alt="Science" style="width:100%;">
-        <div class="text-block">
-          <h4>Social sciences</h4>
-          <a>Click for reviews</a>
-        </div>
-      </div>
-      <div class="majors">
-         <img src="https://images.freeimages.com/images/large-previews/c85/black-hole-1200379.jpg" alt="Science" style="width:100%;">
-	<div class="text-block">
-          <h4>Humanities</h4>
-          <a>Click for reviews</a>
-        </div>
+<div class="container-fluid">
+  <h1 class="text-center">AUCourse Review</h1>
+  <p>This is some text.</p>
+</div>
+<div class="container-fluid">
+  <div class="row">
+    
+    <div class="col-sm-4">
+      <div class="thumbnail">
+	<a href="https://upload.wikimedia.org/wikipedia/commons/7/7d/Head_Platon_Glyptothek_Munich_548.jpg">
+	  <img src="https://upload.wikimedia.org/wikipedia/commons/7/7d/Head_Platon_Glyptothek_Munich_548.jpg" alt="Lights" style="width:100%">
+	  <div class="caption">
+	    <p class="text-center">Humanities course reviews</p>
+	  </div>
+	</a>
       </div>
     </div>
-  </body>
-
-  </html>
+    
+    <div class="col-sm-4">
+      <div class="thumbnail">
+	<a href="https://upload.wikimedia.org/wikipedia/commons/3/36/Sigmund_Freud%2C_by_Max_Halberstadt_%28cropped%29.jpg">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/3/36/Sigmund_Freud%2C_by_Max_Halberstadt_%28cropped%29.jpg" alt="Nature" style="width:100%">
+          <div class="caption">
+            <p>Social sciences course reviews</p>
+          </div>
+	</a>
+      </div> 
+    </div>
+    
+    <div class="col-sm-4">
+      <div class="thumbnail">
+	<a href="https://upload.wikimedia.org/wikipedia/commons/3/3e/Einstein_1921_by_F_Schmutzer_-_restoration.jpg">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Einstein_1921_by_F_Schmutzer_-_restoration.jpg" alt="Fjords" style="width:100%">
+          <div class="caption">
+            <p>Science courses reviews</p>
+          </div>
+	</a>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
