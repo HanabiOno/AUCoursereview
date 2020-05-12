@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Fundamentals of Macro-Economics</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<style>
+.jumbotron {
+  background-color: #e4cbb4; /* Orange */
+color: #ffffff;
+padding: 100px 25px;
+}
+
+.bg-grey {
+background-color: #f6f6f9;
+padding: 100px 25px;
+}
+
+</style>
+<body>
+
+  <div class="container-fluid">
+    <div class="text-center">
+      <div class="jumbotron">
+	<h1 class="display-3">Advanced Programming</h1>
+	<p class="lead">Review page</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid bg-grey">
+    <h2>About the course</h2>
+    <h4><strong>Course Description:</strong></h4>
+    <p>As a fundamentals course, the emphasis is on developing subject-specific academic skills. In addition, we develop and test students' analytic and problem-solving skills (2.3.2.a), encourage acquisition of time-management skills (2.3.2.h), and foster communication skills (2.3.5). We stimulate academic curiosity (2.3.7.b) within the boundaries of the social sciences. Specifically, by the end of the course the student will understand the basic arguments of short-run economic analysis (Keynesian and Real Business Cycle) (2.3.1.a,b), be aware of the distinction between monetary and real spheres of the economy, and their interaction (2.3.1.a,b), understand the uses of fiscal and monetary policy and their impacts on inflation and government debt (2.3.1.b)
+
+</p>
+    <p> <strong>When:</strong> First Semester</p>
+    <p> other info here </p>
+    <a href="https://coursecatalogue.uva.nl/xmlpages/page/2019-2020-en/search-course/course/68254" role="button">Link to course</a>
+  </div>
+  
+  <div class="container-fluid">
+  <h2>Review</h2>
+  <p>See the review</p>
+  <button class="btn btn-default btn-lg">Reviews</button>
+</body>
+</html>
