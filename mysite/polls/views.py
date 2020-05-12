@@ -57,3 +57,6 @@ def SSC_view(request):
 
 def ACC_view(request):
     return render(request, 'polls/ACC.html')
+
+def course_view(request):
+    return render(request, 'polls/courses/sciences/advancedprogramming.html')

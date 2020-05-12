@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
-from polls.views import home_view, HUM_view, SCI_view, SSC_view, ACC_view
+from polls.views import home_view, HUM_view, SCI_view, SSC_view, ACC_view, course_view
 
 urlpatterns = [
     path('', home_view, name = 'home'),
@@ -23,6 +23,7 @@ urlpatterns = [
     path('SCI', SCI_view, name = 'SCI'),
     path('SSC', SSC_view, name = 'SSC'),
     path('ACC', ACC_view, name = 'ACC'),
+    path('SCI/advancedprogramming', course_view, name = 'advancedprogramming'),
     path('polls/', include('polls.urls')),
     path('admin/', admin.site.urls),
 ]
