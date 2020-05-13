@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .forms import *
 from django.contrib.auth import authenticate, login, logout
 
@@ -20,9 +20,9 @@ def register(request):
             #login the user
             login(request, user)
 
-            return redirect("main:home")
+            return redirect("polls:home")
 
     else:
-            form = RegistrationForm()
+        form = RegistrationForm()
     return render(request, "accounts/register.html", {"form": form})
             
