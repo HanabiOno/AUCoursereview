@@ -5,6 +5,7 @@ from .models import Course, Review
 from django.template import loader
 from django.urls import reverse
 from django.views import generic
+from .forms import *
 
 class IndexView(generic.ListView):
     template_name = 'reviews/index.html'
@@ -22,22 +23,22 @@ class ResultsView(generic.DetailView):
     model = Course
     template_name = 'reviews/results.html'
 
-def review(request, course_id):
-    course = get_object_or_404(Course, pk=course_id)
-    try:
-        selected_review = course.review_set.get(pk=request.POST['review'])
-    except (KeyError, Review.DoesNotExist):
-        # Redisplay the course voting form.
-        return render(request, 'reviews/detail.html', {
-            'course': course,
-            'error_message': "You didn't write a review.",
-        })
+def add_review(request, course_id):
+    if request.user.is_authenticated:
+        course = Course.objects.get(id=id)
+        if request.method == "POST":
+            form = ReviewForm(request.POST or None)
+            if form.is_valid():
+                data = form.save(commit=False)
+                data.comment = request.POST["comment"]
+                data.rating = request.POST["rating"]
+                data.user = request.user
+                data.course = course
+                data.save()
+                return redirect("main:detail", id)
+        else:
+            form = ReviewForm()
+        return render(request, 'reviews/details.html', {"form": form})
     else:
-        selected_review.reviews += 1
-        selected_review.save()
-        # Always return an HttpResponseRedirect after successfully dealing
-        # with POST data. This prevents data from being posted twice if a
-        # user hits the Back button.
-        return HttpResponseRedirect(reverse('reviews:results', args=(course.id,)))
-    
+        return redirect("accounts:login")
 # Create your views here.
