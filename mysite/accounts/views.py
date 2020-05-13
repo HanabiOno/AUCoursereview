@@ -12,10 +12,10 @@ def register(request):
             user = form.save()
 
             # get the password
-            raw_password = form.cleaned_data('password1')
+            raw_password = form.cleaned_data.get('password1')
 
             #authenticate the user
-            user = authenticate(username-user.username, password-raw_password)
+            user = authenticate(username=user.username, password=raw_password)
 
             #login the user
             login(request, user)
