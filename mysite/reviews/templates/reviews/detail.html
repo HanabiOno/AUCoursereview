@@ -20,6 +20,10 @@ background-color: #f6f6f9;
 padding: 100px 25px;
 }
 
+.bg-white{
+padding: 100px 25px;
+}
+
 </style>
 <body>
 
@@ -57,24 +61,22 @@ padding: 100px 25px;
   </div>
 
   <div class="container-fluid bg-grey">
+    <h2 class="text-center">Info</h2>
     <h3><strong>Catalogue number:</strong> {{ course.catalogue_nr }}</h3>
     <h3><strong>Course Description:</strong> ......</h3>
-    <h4><strong>Course Description:</strong></h4>
-    <p>Info here</p>
-    <p> other info here </p>
+    <h4>Info here</h4>
     <a href="https://studiegids.uva.nl/xmlpages/page/2019-2020/zoek-vak/vak/68254" class="btn btn-info" role="button">Link to course</a>
   </div>
 
 
-  <div class="container-fluid">
-    <h2>Review</h2>
-    <h3>This is a link to review this course</h3>
-    <a href="https://studiegids.uva.nl/xmlpages/page/2019-2020/zoek-vak/vak/68254" class="btn btn-info" role="button">Review course</a>
+  <div class="container-fluid bg-white">
+    <h2 class="text-center">Review</h2>
+    <h3>This is a link to review this course:</h3><a href="https://studiegids.uva.nl/xmlpages/page/2019-2020/zoek-vak/vak/68254" class="btn btn-info" role="button">Review course</a>
     <h3>This is the average rating: ....</h3>
     <h3>These are the detailed reviews on this course:</h3>
-    <ul>
+    <ul class="list-group">
       {% for review in course.review_set.all %}
-      <li>{{ review.comment }} {{review.rating}}</li>
+      <li class="list-group-item">{{ review.comment }} {{review.rating}}</li>
       {% endfor %}
     </ul>
     
