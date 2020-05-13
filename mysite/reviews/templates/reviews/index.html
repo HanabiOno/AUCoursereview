@@ -46,9 +46,9 @@
 </div>
 
 {% if latest_course_list %}
-    <ul>
+    <ul class="list-group">
     {% for course in latest_course_list %}
-        <li><a href="{% url 'reviews:detail' course.id %}">{{ course.course_name }}</a></li>
+        <li class="list-group-item"><a href="{% url 'reviews:detail' course.id %}">{{ course.course_name }}</a></li>
     {% endfor %}
     </ul>
 {% else %}

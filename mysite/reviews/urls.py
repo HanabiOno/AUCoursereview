@@ -8,5 +8,5 @@ urlpatterns = [
     path('<int:pk>/', views.DetailView.as_view(), name='detail'),
     #results page is not necessary if we want to show the reviews on the index page of the course already
     #path('<int:pk>/results/', views.ResultsView.as_view(), name='results'),
-    path('<int:course_id>/review/', views.review, name='review'),
+    #path('<int:course_id>/review/', views.review, name='review'),
 ]
