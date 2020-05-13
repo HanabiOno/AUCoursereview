@@ -1,4 +1,9 @@
 <h1>{{ course.course_name }}</h1>
+<h3>Catalogue number: {{ course.catalogue_nr }}</h3>
+<h3>Course Description: ......</h3>
+<h3>This is a link to review this course</h3> 
+<h3>This is the average rating: ....</h3>
+<h3>These are the detailed reviews on this course:</h3> 
 <ul>
 {% for review in course.review_set.all %}
     <li>{{ review.comment }} {{review.rating}}</li>
