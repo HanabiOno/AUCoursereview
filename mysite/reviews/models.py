@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from django.contrib.auth.models import User
 
 class Question(models.Model):
     question_text = models.CharField(max_length=200)
@@ -25,7 +26,7 @@ class Course(models.Model):
 
 class Review(models.Model):
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
-    #user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     
     #Every review will be connected to an answer?
     #Q1 = models.ForeignKey(Question, on_delete=models.CASCADE, related_name='Q1', default='no answer')
@@ -38,8 +39,7 @@ class Review(models.Model):
     comment = models.CharField(max_length=500)
     rating = models.FloatField(default=0)
     def __str__(self):
-        return self.comment
-        #return self.user.username
+        return self.user.username
 
         
 # Create your models here.
