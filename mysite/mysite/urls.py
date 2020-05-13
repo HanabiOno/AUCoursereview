@@ -25,5 +25,6 @@ urlpatterns = [
     path('ACC', ACC_view, name = 'ACC'),
     path('SCI/advancedprogramming', course_view, name = 'advancedprogramming'),
     path('polls/', include('polls.urls')),
+    path('reviews/', include('reviews.urls')),
     path('admin/', admin.site.urls),
 ]
