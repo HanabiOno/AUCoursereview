@@ -2,7 +2,7 @@
 {% load static %}
 <html lang="en">
 <head>
-  <title>Mathematical Logic</title>
+  <title>Humanities</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -24,8 +24,14 @@
         <ul class="nav navbar-nav">
           <li class="active"><a href="#">Home</a></li>
           <li><a href="https://www.auc.nl/">About us</a></li>
-          <li><a href="https://upload.wikimedia.org/wikipedia/commons/4/46/Error_Message_Example_vbs.png">Login</a></li>
+          {% if user.is_authenticated %}
+          <li><a href="{% url 'accounts:logout' %}">Logout</a></li>
+          {% else %}
+          <li><a href="{% url 'accounts:login' %}">Login</a></li>
+          <li><a href="{% url 'accounts:register' %}">Register</a></li>
+          {% endif %}
           <li><a href="https://upload.wikimedia.org/wikipedia/commons/4/46/Error_Message_Example_vbs.png">Review course</a></li>
+
         </ul>
         <form class="navbar-form navbar-left" action="/action_page.php">
           <div class="input-group">
