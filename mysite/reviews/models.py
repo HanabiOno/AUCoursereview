@@ -20,7 +20,7 @@ class Choice(models.Model):
 class Course(models.Model):
     course_name = models.CharField(max_length=200)
     catalogue_nr = models.CharField(max_length=10)
-    averageRating = models.FloatField()
+    averageRating = models.FloatField(default=0)
     def __str__(self):
         return self.course_name
 
