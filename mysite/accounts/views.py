@@ -20,7 +20,7 @@ def register(request):
             #login the user
             login(request, user)
 
-            return redirect("polls:index")
+            return redirect("polls:home")
 
     else:
         form = RegistrationForm()
