@@ -3,8 +3,8 @@
 [Assignment 6] (https://advprog.auc-computing.nl/assignment6.html) for Advanced Programming: Build a website
 
 > To run the server follow these steps:
->   - pip install django-crispy-forms
 >   - workon django (go to a django supporting env)
+>   - pip install django-crispy-forms
 
 > go to the directory mysite
 >   - python manage.py runserver 0:8000
