@@ -23,9 +23,9 @@ class ResultsView(generic.DetailView):
     model = Course
     template_name = 'reviews/results.html'
 
-def review(request, course_id):
+def review(request, pk):
     if request.user.is_authenticated:
-        course = Course.objects.get(id=id)
+        course = Course.objects.get(id=pk)
         if request.method == "POST":
             form = ReviewForm(request.POST or None)
             if form.is_valid():
@@ -35,10 +35,11 @@ def review(request, course_id):
                 data.user = request.user
                 data.course = course
                 data.save()
-                return redirect("main:detail", id)
+                return redirect("reviews:review", pk)
         else:
             form = ReviewForm()
-        return render(request, 'reviews/details.html', {"form": form})
+        return render(request, 'reviews/review.html', {"form": form})
     else:
         return redirect("accounts:login")
+
 # Create your views here.
