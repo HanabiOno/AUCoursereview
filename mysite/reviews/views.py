@@ -23,7 +23,7 @@ class ResultsView(generic.DetailView):
     model = Course
     template_name = 'reviews/results.html'
 
-def add_review(request, course_id):
+def review(request, course_id):
     if request.user.is_authenticated:
         course = Course.objects.get(id=id)
         if request.method == "POST":
