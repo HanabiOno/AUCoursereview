@@ -1,0 +1,9 @@
+<h1>{{ course.course_text }}</h1>
+
+<ul>
+{% for choice in course.choice_set.all %}
+    <li>{{ choice.choice_text }} -- {{ choice.reviews }} review{{ choice.reviews|pluralize }}</li>
+{% endfor %}
+</ul>
+
+<a href="{% url 'reviews:detail' course.id %}">Review again?</a>

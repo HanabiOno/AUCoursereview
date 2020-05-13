@@ -1,6 +1,6 @@
-<h1>{{ course.course_text }}</h1>
+<h1>{{ course.course_name }}</h1>
 <ul>
-{% for choice in course.choice_set.all %}
-    <li>{{ choice.choice_text }}</li>
+{% for review in course.review_set.all %}
+    <li>{{ review.comment }} {{review.rating}}</li>
 {% endfor %}
 </ul>
