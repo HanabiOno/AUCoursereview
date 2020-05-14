@@ -30,8 +30,7 @@
           <li><a href="{% url 'accounts:login' %}">Login</a></li>
           <li><a href="{% url 'accounts:register' %}">Register</a></li>
           {% endif %}
-          <li><a href="https://upload.wikimedia.org/wikipedia/commons/4/46/Error_Message_Example_vbs.png">Review course</a></li>
-
+          <li><a href="{% url 'reviews:review' %}">Review course</a></li>
 	</ul>
 	<form class="navbar-form navbar-left" action="/action_page.php">
 	  <div class="input-group">

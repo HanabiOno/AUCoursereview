@@ -1,7 +1,6 @@
-from django.http import Http404
+from django.http import Http404, HttpResponse, HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render, redirect
-from django.http import HttpResponse, HttpResponseRedirect
-from .models import Course, Review
+from .models import *
 from django.template import loader
 from django.urls import reverse
 from django.views import generic
