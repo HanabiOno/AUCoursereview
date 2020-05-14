@@ -17,7 +17,9 @@
 The review app gives a [list of all courses] (http://localhost:8764/reviews/) and by selecting a course you will see a [detailed overview] (http://localhost:8764/reviews/1/) on the course including the reviews. If you want to submit a review you can go to the [reviews page] (http://localhost:8764/reviews/review/). There you will select a existing course (on our website) add a comment and a rating.
 
 > Format for the course overview is under mysite/reviews/templates/reviews/index.html
+
 > Format for each course page is under mysite/reviews/templates/reviews/detail.html
+
 > Format for the review page is under mysite/reviews/templates/reviews/review.html
 
 ###The home page
