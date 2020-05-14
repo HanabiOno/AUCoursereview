@@ -67,10 +67,14 @@
     <div class="card bg-dark text-light">
         <div class="card-body">
             <h3 class="text-center">Add your Review</h3>
-            <form action="{% url 'reviews' pk % 'review'}">
+            <form action="{% url 'reviews:review'}">
               {% csrf_token %}
-                <label for="course">Select course</label>
-                <input type="radio" name="course" value="{{ course_name }}">
+              <label for="course">Select course</label>
+              {% for course in review.course_set.all %}
+             <input type="radio" name="course" value="{{ course_name }}">
+
+             {% endfor %}
+                <p></p>
              <label for="comment">Review</label>
              <textarea name="comment" id="comment" cols="30" rows="5" class="form-control"></textarea>
              <label for="rating">Rating</label>
