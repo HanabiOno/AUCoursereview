@@ -8,10 +8,37 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <script type="text/javascript">
+    function saveEdits() {
 
+    //get the editable element
+    var editElem = document.getElementById("edit");
+
+    //get the edited element content
+    var userVersion = editElem.innerHTML;
+
+    //save the content to local storage
+    localStorage.userEdits = userVersion;
+    
+    //write a confirmation to the user
+    document.getElementById("update").innerHTML="Edits saved!";
+    
+    }
+
+    function checkEdits() {
+
+    //find out if the user has previously saved edits
+    if(localStorage.userEdits!=null)
+    document.getElementById("edit").innerHTML = localStorage.userEdits;
+    }
   </script>
 </head>
 <style>
+
+  .editable {
+
+  padding:25px 25px;
+  }
+  
 .jumbotron {
   background-color: #e4cbb4; /* Orange */
 color: #ffffff;
@@ -28,7 +55,7 @@ padding: 100px 25px;
 }
 
 </style>
-<body>
+<body onload="checkEdits()">
 
   <nav class="navbar navbar-inverse">
   <div class="container-fluid">
@@ -73,8 +100,10 @@ padding: 100px 25px;
     <h2 class="text-center">Info</h2>
     <h3><strong>Catalogue number:</strong> {{ course.catalogue_nr }}</h3>
     <h3><strong>Course Description:</strong></h3>
-    <div id="edit" contenteditable="true">
+    <div class="editable" id="edit" contenteditable="true">
       Here is the element's original content
+      <input type="button" value="save my edits" onclick="saveEdits()"/>
+      <div id="update"> - Edit the text and click to save for next time</div>
     </div>
     <a href="https://studiegids.uva.nl/xmlpages/page/2019-2020/zoek-vak" class="btn btn-info" role="button">Link to course</a>
   </div>
