@@ -69,7 +69,7 @@
 <div class="containter-fluid bg-grey">
     <div class="card bg-dark text-light">
         <div class="card-body">
-            <h3 class="text-center">Add Review</h3>
+            <h3 class="text-center">Add your Review</h3>
             <form action="{% url 'reviews' pk % 'review'}" method="POST">
                 {% csrf_token %}
                 {% for course in review.course_set.all %}
