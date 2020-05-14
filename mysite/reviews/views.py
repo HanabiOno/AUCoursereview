@@ -23,13 +23,13 @@ class ResultsView(generic.DetailView):
     model = Course
     template_name = 'reviews/results.html'
 
-def review(request, pk):
+def review(request):
     if request.user.is_authenticated:
-        course = Course.objects.get(id=pk)
         if request.method == "POST":
             form = ReviewForm(request.POST or None)
             if form.is_valid():
                 data = form.save(commit=False)
+                data.course = request.POST["course %s"] 
                 data.comment = request.POST["comment"]
                 data.rating = request.POST["rating"]
                 data.user = request.user
