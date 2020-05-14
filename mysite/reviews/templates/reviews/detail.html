@@ -7,8 +7,38 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+    function saveEdits() {
+
+    //get the editable element
+    var editElem = document.getElementById("edit");
+
+    //get the edited element content
+    var userVersion = editElem.innerHTML;
+
+    //save the content to local storage
+    localStorage.userEdits = userVersion;
+    
+    //write a confirmation to the user
+    document.getElementById("update").innerHTML="Edits saved!";
+    
+    }
+
+    function checkEdits() {
+
+    //find out if the user has previously saved edits
+    if(localStorage.userEdits!=null)
+    document.getElementById("edit").innerHTML = localStorage.userEdits;
+    }
+  </script>
 </head>
 <style>
+
+  .editable {
+
+  padding:25px 25px;
+  }
+  
 .jumbotron {
   background-color: #e4cbb4; /* Orange */
 color: #ffffff;
@@ -25,7 +55,7 @@ padding: 100px 25px;
 }
 
 </style>
-<body>
+<body onload="checkEdits()">
 
   <nav class="navbar navbar-inverse">
   <div class="container-fluid">
@@ -69,17 +99,19 @@ padding: 100px 25px;
   <div class="container-fluid bg-grey">
     <h2 class="text-center">Info</h2>
     <h3><strong>Catalogue number:</strong> {{ course.catalogue_nr }}</h3>
-    <h3><strong>Course Description:</strong> ......</h3>
-    <h4>Info here</h4>
-    <a href="https://studiegids.uva.nl/xmlpages/page/2019-2020/zoek-vak/vak/68254" class="btn btn-info" role="button">Link to course</a>
+    <h3><strong>Course Description:</strong></h3>
+    <div class="editable" id="edit" contenteditable="true">
+      Here is the element's original content
+      <input type="button" value="save my edits" onclick="saveEdits()"/>
+      <div id="update"> - Edit the text and click to save for next time</div>
+    </div>
+    <a href="https://studiegids.uva.nl/xmlpages/page/2019-2020/zoek-vak" class="btn btn-info" role="button">Link to course</a>
   </div>
 
 
   <div class="container-fluid bg-white">
-    <h2 class="text-center">Review</h2>
-    <h3>This is a link to review this course:</h3><a href="{% url 'reviews:review' %}" class="btn btn-info" role="button">Review course</a>
-    <h3>This is the average rating: ....</h3>
-    <h3>These are the detailed reviews on this course:</h3>
+    <h2 class="text-center">Reviews</h2>
+    <h4>These are the detailed reviews on this course:</h4>
     <ul class="list-group">
       <table>
         <tr>
@@ -97,7 +129,8 @@ padding: 100px 25px;
         {% endfor %} 
       </table>
     </ul>
-    
+    <h4>This is the average rating: ....</h4>
+    <a href="{% url 'reviews:review' %}" class="btn btn-info" role="button">Add review</a>
   </div>
   
 
