@@ -5,6 +5,7 @@ from django.template import loader
 from django.urls import reverse
 from django.views import generic
 from .forms import *
+from django.db.models import Avg
 
 class IndexView(generic.ListView):
     template_name = 'reviews/index.html'
@@ -18,6 +19,15 @@ class DetailView(generic.DetailView):
     model = Course
     template_name = 'reviews/detail.html'
 
+    '''
+    #If we want to add average rating
+    reviews = Review.objects.all().order_by("-comment")
+    average = reviews.aggregate(Avg("rating"))["rating__avg"]
+    if average == None:
+        average = 0
+    average = round(average, 2)
+'''
+    
 class ResultsView(generic.DetailView):
     model = Course
     template_name = 'reviews/results.html'
