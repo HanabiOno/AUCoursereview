@@ -20,7 +20,7 @@ def register(request):
             #login the user
             login(request, user)
 
-            return redirect("polls:home")
+            return redirect("reviews:review")
 
     else:
         form = RegistrationForm()
@@ -29,7 +29,7 @@ def register(request):
 # login
 def login_user(request):
     if request.user.is_authenticated:
-        return redirect("polls:home")
+        return redirect("http://localhost:8764/")
     else:
         if request.method == "POST":
             username = request.POST['username']
@@ -42,7 +42,7 @@ def login_user(request):
             if user is not None:
                 if user.is_active:
                     login(request, user)
-                    return redirect("polls:home")
+                    return redirect("http://localhost:8764/")
                 else:
                     return render(request, 'accounts/login.html', {"error": "Your account has been disabled."})
             else:
