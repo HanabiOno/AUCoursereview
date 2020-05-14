@@ -38,11 +38,10 @@ def review(request):
             form = ReviewForm(request.POST or None)
             if form.is_valid():
                 data = form.save(commit=False)
-                data.course = request.POST["course %s"] 
+                data.course = request.POST["course"] 
                 data.comment = request.POST["comment"]
                 data.rating = request.POST["rating"]
                 data.user = request.user
-                data.course = course
                 data.save()
                 return redirect("reviews:review")
         else:
