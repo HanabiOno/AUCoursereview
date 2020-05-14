@@ -81,9 +81,21 @@ padding: 100px 25px;
     <h3>This is the average rating: ....</h3>
     <h3>These are the detailed reviews on this course:</h3>
     <ul class="list-group">
-      {% for review in course.review_set.all %}
-      <li class="list-group-item">{{ review.comment }} {{review.rating}}</li>
-      {% endfor %}
+      <table>
+        <tr>
+          <th>User</th>
+          <th>Review</th>
+          <th>Rating</th>
+        </tr>
+       
+        {% for review in course.review_set.all %}
+        <tr>
+          <td><li class="list-group-item">{{ review.user }}</li></td>
+          <td><li class="list-group-item">{{ review.comment }}</li></td>
+          <td><li class="list-group-item">{{ review.rating }}</li></td>
+        </tr>
+        {% endfor %} 
+      </table>
     </ul>
     
   </div>
