@@ -42,4 +42,3 @@ def review(request):
     else:
         return redirect("accounts:login")
 
-# Create your views here.

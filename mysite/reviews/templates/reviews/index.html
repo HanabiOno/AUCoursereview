@@ -21,7 +21,7 @@
       <a class="navbar-brand" href="#">AUCourse Review</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
+      <li class="active"><a href="{% url 'home' %}">Home</a></li>
       <li><a href="https://www.auc.nl/">About us</a></li>
       {% if user.is_authenticated %}
         <li><a href="{% url 'accounts:logout' %}">Logout</a></li>
@@ -50,7 +50,7 @@
       <h1 style="border: 4px solid black;">Course catalogue view</h1>
     </div>
 </div>
-
+<h3><strong>Course name</strong></h3>
 {% if latest_course_list %}
     <ul class="list-group">
     {% for course in latest_course_list %}

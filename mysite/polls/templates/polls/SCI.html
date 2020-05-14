@@ -22,7 +22,7 @@
 	  <a class="navbar-brand" href="#">AUCourse Review</a>
 	</div>
 	<ul class="nav navbar-nav">
-	  <li class="active"><a href="#">Home</a></li>
+	  <li class="active"><a href="{% url 'home' %}">Home</a></li>
 	  <li><a href="https://www.auc.nl/">About us</a></li>
           {% if user.is_authenticated %}
           <li><a href="{% url 'accounts:logout' %}">Logout</a></li>
@@ -50,8 +50,8 @@
       <img src="https://www.auc.nl/binaries/_ht_1588430866264/content/gallery/projectsites/amsterdam-university-college/academic-programme/placemats/2020-2021/sciences-placemat-2020-2021.jpg" alt="Workplace" usemap="#workmap" width="880" height="758">
 
       <map name="workmap">
-	<area shape="rect" coords="50,345,150,361" alt="advprogramming" href="{% url 'advancedprogramming' %}">
-	<area shape="rect" coords="50,182,239,200" alt="mathematical logic" href="{% url 'advancedprogramming' %}">
+	<area shape="rect" coords="50,345,150,361" alt="advprogramming" href="{% url 'reviews:detail' 1 %}">
+	<area shape="rect" coords="244,408,339, 433" alt="mathematical logic" href="{% url 'reviews:detail' 2%}">
       </map>
 
   </body>
