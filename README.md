@@ -37,7 +37,7 @@ The review app gives a [list of all courses] (http://localhost:8764/reviews/) an
 ###[The accounts app] (http://localhost:8764/accounts/register/)
 The accounts app will make it possible to [login] (http://localhost:8764/accounts/login/), [logout] (http://localhost:8764/accounts/logout/) and to make the reviews connected to a user. If you log in you will be redirected to the [home page] (http://localhost:8764/) and if you log out you will be redirected to the [login page](http://localhost:8764/accounts/login/).
 
-####Further devolpment
+####Further development
 - Add more questions (for now we only have a comment and rating)
 - Add all courses
 - Add UVA/VU courses

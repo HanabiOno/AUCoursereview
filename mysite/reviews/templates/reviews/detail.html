@@ -41,7 +41,7 @@ padding: 100px 25px;
        <li><a href="{% url 'accounts:login' %}">Login</a></li>
        <li><a href="{% url 'accounts:register' %}">Register</a></li>
       {% endif %}
-      <li><a href="https://upload.wikimedia.org/wikipedia/commons/4/46/Error_Message_Example_vbs.png">Review course</a></li>
+      <li><a href="{% url 'reviews:review' %}">Review course</a></li>
 
     </ul>
     <form class="navbar-form navbar-left" action="/action_page.php">
@@ -77,7 +77,7 @@ padding: 100px 25px;
 
   <div class="container-fluid bg-white">
     <h2 class="text-center">Review</h2>
-    <h3>This is a link to review this course:</h3><a href="https://studiegids.uva.nl/xmlpages/page/2019-2020/zoek-vak/vak/68254" class="btn btn-info" role="button">Review course</a>
+    <h3>This is a link to review this course:</h3><a href="{% url 'reviews:review' %}" class="btn btn-info" role="button">Review course</a>
     <h3>This is the average rating: ....</h3>
     <h3>These are the detailed reviews on this course:</h3>
     <ul class="list-group">
