@@ -29,14 +29,13 @@ class Course(models.Model):
 
 class Review(models.Model):
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
-    #user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
     
     #This is the forms approach
     comment = models.CharField(max_length=500)
     rating = models.FloatField(default=0)
     def __str__(self):
-        return self.comment
-        #return self.user.username
+        return self.user.username
 
         
 # Create your models here.
