@@ -1,6 +1,9 @@
 from django.db import models
 from django.utils import timezone
+from django.db import models
+from django.db import models
 from django.contrib.auth.models import User
+
 '''
 class Question(models.Model):
     question_text = models.CharField(max_length=200)
@@ -26,13 +29,14 @@ class Course(models.Model):
 
 class Review(models.Model):
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    #user = models.ForeignKey(User, on_delete=models.CASCADE)
     
     #This is the forms approach
     comment = models.CharField(max_length=500)
     rating = models.FloatField(default=0)
     def __str__(self):
-        return self.user.username
+        return self.comment
+        #return self.user.username
 
         
 # Create your models here.

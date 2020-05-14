@@ -34,7 +34,7 @@ def review(request):
                 data.user = request.user
                 data.course = course
                 data.save()
-                return redirect("reviews:review", pk)
+                return redirect("reviews:review")
         else:
             form = ReviewForm()
         return render(request, 'reviews/review.html', {"form": form})
