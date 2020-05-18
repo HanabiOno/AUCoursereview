@@ -70,9 +70,9 @@
             <form action="{% url 'reviews:review'}">
               {% csrf_token %}
               <label for="course">Select course</label>
-            
-              {% for course in review.course_set.all %}
-              <input type="radio" name="course" value="{{ course_name }}">
+              {% course_list %}
+              {% for course in courses %}
+                  <input type="radio" name="course" value="{{ course_name }}">
               {% endfor %}
 
              
