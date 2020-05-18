@@ -34,6 +34,7 @@ class ResultsView(generic.DetailView):
 
 def review(request):
     if request.user.is_authenticated:
+        course_list = list(Course.objects.all()) 
         if request.method == "POST":
             form = ReviewForm(request.POST or None)
             if form.is_valid():
@@ -45,8 +46,8 @@ def review(request):
                 data.save()
                 return redirect("reviews:review")
         else:
-            form = ReviewForm()
-        return render(request, 'reviews/review.html', {"form": form})
+            form = ReviewForm() 
+            return render(request, 'reviews/review.html', {"form": form})
     else:
         return redirect("accounts:login")
 
