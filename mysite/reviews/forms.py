@@ -1,7 +1,7 @@
 from django import forms
 from .models import *
 
-# mcourse add form
+# course add form
 class CourseForm(forms.ModelForm):
     class Meta:
         model = Course
@@ -10,4 +10,4 @@ class CourseForm(forms.ModelForm):
 class ReviewForm(forms.ModelForm):
     class Meta:
         model = Review
-        fields = ("comment", "rating")
+        fields = ("course", "comment", "rating")
