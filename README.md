@@ -1,7 +1,5 @@
 # AUCourse review website
 
-[Assignment 6] (https://advprog.auc-computing.nl/assignment6.html) for Advanced Programming: Build a website
-
 > To run the server follow these steps:
 >   - workon django (go to a django supporting env)
 >   - pip install django-crispy-forms
